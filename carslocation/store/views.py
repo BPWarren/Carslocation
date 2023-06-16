@@ -27,6 +27,7 @@ def liste_percategory(request, categoryname):
 
 
 # Car details
+@transaction.atomic()
 def car_details(request, id):
     car = get_object_or_404(Car, pk=id)
     # Car disponible?
