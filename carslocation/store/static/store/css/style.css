@@ -1,0 +1,137 @@
+.container-fluid.list {
+    background-color: rgb(194, 189, 189);
+}
+
+span {
+    color: rgb(6, 179, 49);
+}
+
+.navbar-brand {
+    font-size: 1.6em;
+}
+
+.form-control.me-auto {
+    width: 48vw;
+    border-radius: 20px 20px 20px 20px;
+}
+
+.btn.btn-outline-success {
+    border-radius: 20px 20px 20px 20px;
+    margin-left: 5px;
+
+}
+
+.bi.bi-search {
+    color: white;
+}
+
+.carousel-item img {
+    margin-top: 5%;
+    height: 450px;
+    object-fit: cover;
+
+}
+
+.card {
+    border-radius: 5px 5px 20px 20px;
+    margin: 5px;
+    width: 15rem;
+    max-width: 15rem;
+    padding: 0;
+}
+
+.card img {
+    max-width: 15rem;
+    max-height: 12rem;
+}
+
+.star-rating {
+    font-size: 1.2em;
+    color: #FFD700;
+    position: relative;
+    left: 5em;
+    /* Couleur des étoiles remplies */
+}
+
+.star-rating i:hover,
+.star-rating i:hover~i {
+    color: #FFD700;
+    /* Couleur des étoiles survolées et des étoiles suivantes */
+}
+
+.star-rating i.active {
+    color: #FFD700;
+    /* Couleur des étoiles actives */
+}
+
+.card-text {
+    font-size: small;
+}
+
+.btn-price {
+    display: flex;
+}
+
+.price {
+    margin-left: auto;
+}
+
+.btn.btn-default {
+    background-color: black;
+    border-radius: 20px 20px 20px 20px;
+    color: white;
+    font-size: small;
+}
+
+.bi.bi-plus-circle-fill {
+    font-size: 1em;
+    color: rgb(6, 179, 49);
+    margin: 5px;
+}
+
+.bi.bi-plus-circle-fill :hover {
+    color: rgb(13, 141, 45);
+}
+
+.category-box {
+    margin: 10px;
+    background-color: white;
+}
+
+.category-box img {
+    margin-top: 3px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.picture-details {
+    display: flex;
+}
+
+.color-details {
+    display: flex;
+}
+
+.speed-details,
+.livraison-details,
+.place-details {
+    display: flex;
+
+}
+
+.value.col-6 {
+    align-self: flex-end;
+}
+
+.userform{
+    background-color: black;
+    color: white;
+    font-size: medium;
+    margin: 10px;
+    padding-bottom: 20px;
+}
+
+.alert-danger{
+    margin: 10px;
+    text-align: center;
+}

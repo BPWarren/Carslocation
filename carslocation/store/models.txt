@@ -1,0 +1,35 @@
+Mise au point des models :
+
+*customer : locataire no inscrit
+1.name
+2.email
+3.address 
+4.CNI 
+
+*location : booking
+1.date 
+2.processed
+
+*voitures 
+1.name 
+2.model 
+3.brand  : marque  
+4.categorie
+5.price 
+6.quantity
+7.available
+8.urls  
+
+*user 
+1.name
+2.email
+3.address 
+4.CNI 
+
+---------------
+Relations
+
+booking -> customer : 1.n OneToMany
+booking -> Car : 1.n OneToMany
+
+

@@ -1,0 +1,1 @@
+# demarer le serveur postgresql sur windows : pg_ctl start -D "C:\Program Files\PostgreSQL\15\data"

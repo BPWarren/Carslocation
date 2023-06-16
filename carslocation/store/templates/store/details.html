@@ -1,0 +1,103 @@
+{% extends 'store/base.html'%}
+{% load static %}
+{% block pagecontent %}
+{% if errors %}
+    <div class="alert alert-danger alert-sm" role="alert">      
+        <p>Location Non valider Formulaire Incorect 
+            <a class="btn btn-primary btn-sm " href="#{{form.name.id_for_label}} " role="button">Reesayer</a> 
+        </p>  
+              
+    </div>
+{% endif %}
+{% if not car.available %}
+    <div class="alert alert-danger alert-sm" role="alert">      
+        <p> Nous sommes désolé <strong>{{car.brand}} {{car.model}}</strong> est indisponible pour l'instant  
+        </p>  
+    </div>
+{% endif %}
+<div class="container-fluid !direction !spacing">
+    <div class="row ${1| ,row-cols-2,row-cols-3, auto,justify-content-md-center,|} picture-details">
+        <div class="col-6 ">
+            <!--Image-->
+            <img src="{{car.urls.0}} " class="img-fluid rounded-top" alt="">
+        </div>
+        <div class="col-6 ">
+            <!--details-->
+
+            <p>
+                <h3>{{car.brand|upper}} <span>{{ car.model|upper}}</span></h3>
+                Here will be the text to describe long our cars. Skip it for now. 
+                Some quick example text to build on the card title and make up the bulk of the card's content.
+            </p>
+            <div class="star-rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+            </div>
+            
+            <hr/>
+            <div class="row speed-details">
+                <p class="col-6">Vitesse</p>
+                <p class="value col-6" >300Km/h</p>
+            </div>
+            
+            <div class="row livraison-details">
+                <p class="col-6">Livraison</p>
+                <p class="value col-6">$0.5/Km</p>
+            </div>
+            <div class="row place-details">
+                <p class="col-6">Lieu</p>
+                <p class="value col-6">partout</p>
+            </div>
+            <hr/>
+            <div class="btn-price">
+                <a href="#fullname" class="btn btn-default md "><i class="bi bi-plus-circle-fill"></i>Take the {{car.brand}}</a>
+                <h4 class='price'><span>${{ car.price}} </span>/Mounth</h4>
+            </div>
+        </div>
+        <hr/>
+        <h4 style="text-align : center;"> RESERVATION <span>FORM</span></h4> <small id="helpId" class="text-muted">Fill to get {{car.brand}} {{car.model}}</small>
+        <form class="userform" action="{% url 'details' id=car.id %}" method='post'>
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-6 mb-3">
+                    <label for="{{form.name.id_for_label}}" class="form-label ">Full Name</label>
+                    {{form.name}}
+                    <small id="helpId" class="text-muted"></small>
+                </div>
+
+                <div class="col-6 mb-3">
+                  <label for="{{fomr.email.id_for_label}}" class="form-label">Email</label>
+                    {{form.email}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 mb-3">
+                  <label for="{{form.cni.id_for_label}}" class="form-label">CNI</label>
+                  {{form.cni}}
+                  <small id="helpId" class="text-muted"></small>
+                </div>
+
+                <div class="col-6 mb-3">
+                  <label for="{{form.address.id_for_label}}" class="form-label">Address </label>
+                  {{form.address}}
+                  <small id="helpId" class="text-muted"></small>
+                </div>
+            </div>
+                <button type="submit" class="btn btn-default md" style="background-color:white; color : black; justify : center;"><i class="bi bi-plus-circle-fill" ></i>Submit</button>
+            </div>
+        </form>
+        {% if errors %}
+            <div class="alert alert-danger alert-sm" role="alert">
+                {% for key,value in errors  %}
+                <p>{{value}} </p>
+                {% endfor %}         
+            </div>
+        {% endif %}
+        
+    </div>
+</div>
+   
+{% endblock pagecontent %}
