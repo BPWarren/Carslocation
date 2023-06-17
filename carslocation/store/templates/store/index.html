@@ -1,27 +1,29 @@
-{% extends 'store/base.html' %}
-{% load static %}
-
-
-{% block pagecontent %}
-    <div class="container-fluid list !direction !spacing">
-        <div class="row justify-content-center align-items-center g-2">
-            {% for category in categories %}
-                <div class="col-4 category-box" style="max-width: 17rem;">
-                    <h5>{{category.title|upper}}</h5>
-                    <a href="{% url 'categorypage' categoryname=category.title %}">
-                        <div class="row img-verticale">
-                            <img class="col-6 img-fluid" src="{{category.urls.0}}" alt="">
-                            <img class="col-6 img-fluid" src="{{category.urls.1}}" alt="">
-                        </div>
-                        <img class="img-fluid" src="{{category.urls.2}}" alt="">
-                    </a>
-                </div>
-            {% endfor %}
+{% extends 'store/base.html' %} {% load static %} {% block pagecontent %}
+<div class="container-fluid list !direction !spacing">
+  <div class="row justify-content-center align-items-center g-2">
+    {% for category in categories %}
+    <div class="col-4 category-box" style="max-width: 17rem">
+      <h5>{{category.title|upper}}</h5>
+      <a href="{% url 'categorypage' categoryname=category.title %}">
+        <div class="row img-verticale" style="padding-left: 0.5rem">
+          <img
+            class="col-6 px-1 img-fluid"
+            src="{{category.urls.0}}"
+            alt=""
+            style="max-width: 8.5rem"
+          />
+          <img
+            class="col-6 px-1 img-fluid"
+            src="{{category.urls.1}}"
+            alt=""
+            style="max-width: 8.5rem"
+          />
         </div>
+        <img class="img-fluid" src="{{category.urls.2}}" alt="" />
+      </a>
     </div>
+    {% endfor %}
+  </div>
+</div>
 
-    
-    {% include 'store/carslist.html' %}
-{% endblock pagecontent %}
-
-
+{% include 'store/carslist.html' %} {% endblock pagecontent %}
